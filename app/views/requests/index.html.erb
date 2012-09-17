@@ -1,0 +1,65 @@
+<h1>Listing requests</h1>
+
+<table>
+  <tr>
+    <th>Request nr</th>
+    <th>Request version</th>
+    <th>Task</th>
+    <th>Request beschreibung</th>
+    <th>Itsg fachlich</th>
+    <th>Itsg teschnisch</th>
+    <th>Gkv fachlich</th>
+    <th>Gkv technisch</th>
+    <th>Teradata fachlich</th>
+    <th>Teradata technisch</th>
+    <th>Kostenstelle</th>
+    <th>Sonderstatus</th>
+    <th>Analyse und design</th>
+    <th>Fachl freigabe implementierung</th>
+    <th>Fachl freigabe implementierung</th>
+    <th>Fachl freigabe implementierung</th>
+    <th>Abnahme teradata</th>
+    <th>Abnahme fachlich gkv</th>
+    <th>Abnahme technisch itsg</th>
+    <th>Migration produktion</th>
+    <th>Ziel migration</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @requests.each do |request| %>
+  <tr>
+    <td><%= request.request_nr %></td>
+    <td><%= request.request_version %></td>
+    <td><%= request.task.task_nr %></td>
+    <td><%= request.request_beschreibung %></td>
+    <td><%= request.itsg_fachlich %></td>
+    <td><%= request.itsg_teschnisch %></td>
+    <td><%= request.gkv_fachlich %></td>
+    <td><%= request.gkv_technisch %></td>
+    <td><%= request.teradata_fachlich %></td>
+    <td><%= request.teradata_technisch %></td>
+    <td><%= request.kostenstelle %></td>
+    <td><%= request.sonderstatus %></td>
+    <td><%= request.analyse_und_design %></td>
+    <td><%= request.fachl_freigabe_implementierung %></td>
+    <td><%= request.fachl_freigabe_implementierung %></td>
+    <td><%= request.fachl_freigabe_implementierung %></td>
+    <td><%= request.abnahme_teradata %></td>
+    <td><%= request.abnahme_fachlich_gkv %></td>
+    <td><%= request.abnahme_technisch_itsg %></td>
+    <td><%= request.migration_produktion %></td>
+    <td><%= request.ziel_migration %></td>
+    <td><%= link_to 'Show', request %></td>
+    <td><%= link_to 'Edit', edit_request_path(request) %></td>
+    <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Request', new_request_path %>
+<%= link_to 'New Task', new_task_path %>
+

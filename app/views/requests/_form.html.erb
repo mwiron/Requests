@@ -1,0 +1,162 @@
+<%= form_for(@request) do |f| %>
+  <% if @request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
+
+      <ul>
+      <% @request.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :request_nr, "RequestNr: " %><%= @request.request_nr %><br />
+  </div>
+  <div class="field">
+    <%= f.label :request_version %><br />
+    <%= f.text_field :request_version %>
+  </div>
+  Neuen Task erstellen:<input type="checkbox" value="false" name="check" id="check" checked="false" />
+  <div class="field">
+    <%#= f.label :req_use %><br />
+    <%#= f.select :req_new, Task.all.collect {|re|[re.task_nr, re.id]} ,{}, :id =>"meinfeld"%>
+    
+    <a id="show"></a>
+      
+    <%# c=Task.all(:select => 'task_beschreibung', :conditions => 'id = 1')%>
+    <%#= f.fields_for :task do |t|%>
+    <%= f.label :task_id, "Task wählen: " %><br />
+    <%= collection_select(:request, :task_id, Task.all, :id, :full_task) %>
+    
+  
+    <%#= t.label :task_beschreibung, Task.by_id(1).collect(&:task_beschreibung).shift.strip %>
+    <%#end%>
+    <%# @list = Email.find_by_sql(["SELECT * FROM Emails WHERE (sent_id = :id OR from_id = :id)", {:id => params[:id]}])%>
+    <%#= f.text_field :task_beschreibung, Task.select("task_beschreibung").where("id = ?","setValue()")%>    
+    <%#= f.label :req_use, Task.select("task_beschreibung").where(:id =>"setValue()"), :id => "show"%>
+  </div>
+  <%#=f%>
+  <%#Task.where(:id => 1).pluck(:task_beschreibung)
+   <div id="task_use" style="display:block;">
+  <%#= f.fields_for :task do |req| %>
+    <%#= req.label :id %><br />
+    <%#= req.select :id, Task.all.collect {|re|[re.task_nr, re.id]} %> <text id="show"> </text>
+    <%#= req.text_field :task_beschreibung%>
+  <%#end%>
+  </div>
+  
+  <div id="task_new" style="display:none;">
+  <%#= f.fields_for :task do |req| %>
+    <%#= req.label :task_nr %><br />
+    <%#= req.text_field :task_beschreibung%>
+  <%#end%>
+  </div>
+  <div class="field">
+    <%= f.label :request_beschreibung %><br />
+    <%= f.text_field :request_beschreibung %>
+  </div>
+  <div class="field">
+    <%= f.label :itsg_fachlich %><br />
+    <%= f.text_field :itsg_fachlich %>
+  </div>
+  <div class="field">
+    <%= f.label :itsg_teschnisch %><br />
+    <%= f.text_field :itsg_teschnisch %>
+  </div>
+  <div class="field">
+    <%= f.label :gkv_fachlich %><br />
+    <%= f.text_field :gkv_fachlich %>
+  </div>
+  <div class="field">
+    <%= f.label :gkv_technisch %><br />
+    <%= f.text_field :gkv_technisch %>
+  </div>
+  <div class="field">
+    <%= f.label :teradata_fachlich %><br />
+    <%= f.text_field :teradata_fachlich %>
+  </div>
+  <div class="field">
+    <%= f.label :teradata_technisch %><br />
+    <%= f.text_field :teradata_technisch %>
+  </div>
+  <div class="field">
+    <%= f.label :kostenstelle %><br />
+    <%= f.text_field :kostenstelle %>
+  </div>
+  <div class="field">
+    <%= f.label :sonderstatus %><br />
+    <%= f.text_field :sonderstatus %>
+  </div>
+  <div class="field">
+    <%= f.label :analyse_und_design %><br />
+    <%= f.date_select :analyse_und_design, :include_blank => true, :order => [:day,:month, :year] %>
+  </div>
+  <div class="field">
+    <%= f.label :fachl_freigabe_implementierung %><br />
+    <%= f.date_select :fachl_freigabe_implementierung, :include_blank => true, :order => [:day,:month, :year] %>
+  </div>
+  <div class="field">
+    <%= f.label :fachl_freigabe_implementierung %><br />
+    <%= f.date_select :fachl_freigabe_implementierung , :include_blank => true, :order => [:day,
+:month, :year] %>
+  </div>
+  <div class="field">
+    <%= f.label :fachl_freigabe_implementierung %><br />
+    <%= f.date_select :fachl_freigabe_implementierung, :include_blank => true, :order => [:day,:month, :year] %>
+  </div>
+  <div class="field">
+    <%= f.label :abnahme_teradata %><br />
+    <%= f.date_select :abnahme_teradata, :include_blank => true, :order => [:day,:month, :year] %>
+  </div>
+  <div class="field">
+    <%= f.label :abnahme_fachlich_gkv %><br />
+    <%= f.date_select :abnahme_fachlich_gkv, :include_blank => true, :order => [:day,:month, :year] %>
+  </div>
+  <div class="field">
+    <%= f.label :abnahme_technisch_itsg %><br />
+    <%= f.date_select :abnahme_technisch_itsg, :include_blank => true, :order => [:day,:month, :year] %>
+  </div>
+  <div class="field">
+    <%= f.label :migration_produktion %><br />
+    <%= f.date_select :migration_produktion, :include_blank => true, :order => [:day,:month, :year] %>
+  </div>
+  <div class="field">
+    <%= f.label :ziel_migration %><br />
+    <%= f.date_select :ziel_migration, :include_blank => true, :order => [:day,:month, :year] %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<script>  
+$(document).ready(function() {
+$("#check").click(function () {
+if ($('#check').checked == false) {
+} else {
+$('#task_new').toggle();
+$('#task_use').toggle();
+/*$('#inner_eins').replaceWith('<%#= req.text_field :task_nr %>');*/
+
+}
+});
+}); 
+function displayVals() {
+      var singleValues = $("#meinfeld").val();
+      var test = document.getElementById('meinfeld').innerHTML
+     $(page).assign 'req_tmp',{singleValues};
+     $("#show").html("<b>Taskbescheibung:</b> " + singleValues);
+    }
+
+    $("#meinfeld").change(displayVals);
+    displayVals();
+    
+function setValue(){
+ var bescheibungValues= $("#meinfeld").val();
+ $("#bescheibung").val(bescheibungValues)   
+}
+$("#request_task_attributes_task_nr").change(setValue);
+    setValue();
+</script>

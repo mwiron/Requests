@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Task nr:</b>
+  <%= @task.task_nr %>
+</p>
+
+<p>
+  <b>Task beschreibung:</b>
+  <%= @task.task_beschreibung %>
+</p>
+
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Home Task', tasks_path %>
+
+

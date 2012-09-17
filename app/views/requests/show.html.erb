@@ -1,0 +1,110 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Request nr:</b>
+  <%= @request.request_nr %>
+</p>
+
+<p>
+  <b>Request version:</b>
+  <%= @request.request_version %>
+</p>
+
+<p>
+  <b>Task:</b>
+  <%= @request.task.task_nr %>
+</p>
+
+<p>
+  <b>Request beschreibung:</b>
+  <%= @request.request_beschreibung %>
+</p>
+
+<p>
+  <b>Itsg fachlich:</b>
+  <%= @request.itsg_fachlich %>
+</p>
+
+<p>
+  <b>Itsg teschnisch:</b>
+  <%= @request.itsg_teschnisch %>
+</p>
+
+<p>
+  <b>Gkv fachlich:</b>
+  <%= @request.gkv_fachlich %>
+</p>
+
+<p>
+  <b>Gkv technisch:</b>
+  <%= @request.gkv_technisch %>
+</p>
+
+<p>
+  <b>Teradata fachlich:</b>
+  <%= @request.teradata_fachlich %>
+</p>
+
+<p>
+  <b>Teradata technisch:</b>
+  <%= @request.teradata_technisch %>
+</p>
+
+<p>
+  <b>Kostenstelle:</b>
+  <%= @request.kostenstelle %>
+</p>
+
+<p>
+  <b>Sonderstatus:</b>
+  <%= @request.sonderstatus %>
+</p>
+
+<p>
+  <b>Analyse und design:</b>
+  <%= @request.analyse_und_design %>
+</p>
+
+<p>
+  <b>Fachl freigabe implementierung:</b>
+  <%= @request.fachl_freigabe_implementierung %>
+</p>
+
+<p>
+  <b>Fachl freigabe implementierung:</b>
+  <%= @request.fachl_freigabe_implementierung %>
+</p>
+
+<p>
+  <b>Fachl freigabe implementierung:</b>
+  <%= @request.fachl_freigabe_implementierung %>
+</p>
+
+<p>
+  <b>Abnahme teradata:</b>
+  <%= @request.abnahme_teradata %>
+</p>
+
+<p>
+  <b>Abnahme fachlich gkv:</b>
+  <%= @request.abnahme_fachlich_gkv %>
+</p>
+
+<p>
+  <b>Abnahme technisch itsg:</b>
+  <%= @request.abnahme_technisch_itsg %>
+</p>
+
+<p>
+  <b>Migration produktion:</b>
+  <%= @request.migration_produktion %>
+</p>
+
+<p>
+  <b>Ziel migration:</b>
+  <%= @request.ziel_migration %>
+</p>
+
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Home Request', requests_path %>

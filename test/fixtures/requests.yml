@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  request_nr: MyString
+  request_version: MyString
+  task: 
+  request_beschreibung: MyString
+  itsg_fachlich: MyString
+  itsg_teschnisch: MyString
+  gkv_fachlich: MyString
+  gkv_technisch: MyString
+  teradata_fachlich: MyString
+  teradata_technisch: MyString
+  kostenstelle: MyString
+  sonderstatus: MyString
+  analyse_und_design: 2012-09-14
+  fachl_freigabe_implementierung: 2012-09-14
+  fachl_freigabe_implementierung: 2012-09-14
+  fachl_freigabe_implementierung: 2012-09-14
+  abnahme_teradata: 2012-09-14
+  abnahme_fachlich_gkv: 2012-09-14
+  abnahme_technisch_itsg: 2012-09-14
+  migration_produktion: 2012-09-14
+  ziel_migration: 2012-09-14
+
+two:
+  request_nr: MyString
+  request_version: MyString
+  task: 
+  request_beschreibung: MyString
+  itsg_fachlich: MyString
+  itsg_teschnisch: MyString
+  gkv_fachlich: MyString
+  gkv_technisch: MyString
+  teradata_fachlich: MyString
+  teradata_technisch: MyString
+  kostenstelle: MyString
+  sonderstatus: MyString
+  analyse_und_design: 2012-09-14
+  fachl_freigabe_implementierung: 2012-09-14
+  fachl_freigabe_implementierung: 2012-09-14
+  fachl_freigabe_implementierung: 2012-09-14
+  abnahme_teradata: 2012-09-14
+  abnahme_fachlich_gkv: 2012-09-14
+  abnahme_technisch_itsg: 2012-09-14
+  migration_produktion: 2012-09-14
+  ziel_migration: 2012-09-14
